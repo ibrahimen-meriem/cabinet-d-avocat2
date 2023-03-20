@@ -20,22 +20,20 @@ Route::get('/users', function () {
     return view('listeUsers');
 });
 Route::get("/",function (){
-    return view("index") ;
+    return view("login") ;
 }) ;
+
+
+Route::get("/ajouterTache",function (){
+    return view("ajouterTache") ;
+}) ;
+
+
 
 
 Route::get('/ajouterUser', function () {
     return view('AjouterUser');
 });
-
-
-Route::get('/client', function () {
-    return view('profilClient');
-});
-
-
-
-
 
 
 Route::get('/clients', function () {
@@ -54,9 +52,17 @@ Route::get('/parametres', function () {
 Route::get('/User', function () {
     return view('profilUser');
 });
-Route::get('/AjouterAffaire', function () {
-    return view('AjoutrAffaire');
+
+Route::get('/ajouterAffaire', function () {
+    return view('ajouterAffaire');
 });
+
+
+
+    Route::get('/ajouterClient', function () {
+        return view('AjouterClient');
+    });
+
 
 
 
