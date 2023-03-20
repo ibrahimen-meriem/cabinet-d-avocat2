@@ -91,7 +91,7 @@
                 </div>
 
             </div>
-            <button type="submit" class="btn mt-5 m-auto w-25 " style="background: black;color:gold;border-radius: 30px;border: 1px solid gold">Ajouter</button>
+            <button type="submit" class="btn mt-5 m-auto w-25 " style="background: black;color:gold;border-radius: 30px;border: 1px solid gold">Ajouter affaire</button>
         </form>
     </div>
 @endsection
