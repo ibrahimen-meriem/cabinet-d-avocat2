@@ -20,7 +20,7 @@
             position: relative;
             top:0;
             border: 4px solid gold;
-
+    overflow: auto;
         }
         ul{
             list-style: none;
@@ -131,6 +131,9 @@
             </header>
             <main class="bg-danger p-5 text-center">
                 @yield("content")
+                <script src="./jquery-3.6.4.min.js"></script>
+                <script src="./bootstrap.min.js"></script>
+                @yield('script')
             </main>
         </div>
     </div>

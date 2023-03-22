@@ -36,9 +36,7 @@ Route::get('/ajouterUser', function () {
 });
 
 
-Route::get('/clients', function () {
-    return view('Clients');
-});
+Route::get('/clients',[\App\Http\Controllers\ClientsController::class,'index'])->name('clients');
 Route::get('/affaires', function () {
     return view('affaires');
 });
@@ -59,9 +57,16 @@ Route::get('/ajouterAffaire', function () {
 
 
 
-    Route::get('/ajouterClient', function () {
-        return view('AjouterClient');
-    });
+
+Route::get('\create',[\App\Http\Controllers\ClientsController::class,'create'])->name("create-clients");
+Route::match(['get', 'post'],'\store',[\App\Http\Controllers\ClientsController::class,'store'])->name("create-store");
+Route::get('\edit\{id}',[\App\Http\Controllers\ClientsController::class,'edit'])->name("edit-clients");
+Route::match(['get', 'post'],'\update\{id}',[\App\Http\Controllers\ClientsController::class,'update'])->name("updatclient");
+Route::get('\delet\{id}',[\App\Http\Controllers\ClientsController::class,'destroy'])->name("delet-clients");
+Route::match(['get', 'post'],'\ajax_search',[\App\Http\Controllers\ClientsController::class,'ajax_search'])->name("ajax_search");
+Route::get('\show\{id}',[\App\Http\Controllers\ClientsController::class,'show'])->name("show-client");
+
+
 
 
 
