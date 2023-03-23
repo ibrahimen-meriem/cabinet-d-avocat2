@@ -72,6 +72,16 @@ class ClientsController extends Controller
 
 
     }
+    function ajax_search_ville(Request $request){
+        if($request->ajax()){
+            $searchClientVille=$request->searchClientVille;
+            $data=client::where("ville","like","%{$searchClientVille}%")->orderby("id","ASC")->get();
+            return view(('ajax_search'),['data'=>$data]);
+
+        }
+
+
+    }
     public  function show(int $id){
         $data=client::select("*")->find($id);
         return view('profilClient' ,['data'=>$data]);

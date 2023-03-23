@@ -55,6 +55,6 @@ background-size: cover ; height: 700px ; width: 700px ; border: 3px #FFD700 soli
 
 
 @endsection
-@section("titre","profil user")
+@section("titre","$data->nom")
 @section("clients","text-white border-bottom ")
 

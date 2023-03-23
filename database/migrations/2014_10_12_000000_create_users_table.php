@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('password');
             $table->string('tel');
             $table->string('role');
-            $table->boolean('admin');
+            $table->boolean('admin')->default(0);
+            $table->string("photo")->default("360_F_503577073_y4ZwKcQttFbUut0A7InyK8LhS3ObKL2t.jpg");
             $table->rememberToken();
             $table->timestamps();
         });

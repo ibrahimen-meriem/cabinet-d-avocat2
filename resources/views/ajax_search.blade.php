@@ -5,6 +5,8 @@
         <th scope="col">Nom</th>
         <th scope="col">Prenom</th>
         <th scope="col">ACTIVE</th>
+        <th scope="col">ville</th>
+        <
         <th scope="col"> actions</th>
     </tr>
     </thead>
@@ -17,12 +19,16 @@
                 <td>{{$info->nom}}</td>
                 <td>{{$info->prenom}}</td>
                 <td>@if($info->active==1) Active @else not active @endif</td>
+                <td>{{$info->ville}}</td>
+
 
                 <td>
                     <a href="{{route('edit-clients', $info->id)}}" class="btn " style="background: gold">
                         <img  style="width: 20px;height: 20px" src="./icon/update-12.png"/></a>
                     <a href="{{route('delet-clients', $info->id)}}" onclick="return confirm('are you sur you want delete this client')" class=" btn" style="background: gold">
                         <img  style="width: 20px;height: 20px" src="./icon/1345874.png"/></a>
+                    <a href="{{route('show-client', $info->id)}}"  class=" btn" style="background: gold">
+                        <img  style="width: 20px;height: 20px" src="./icon/user-profile-icon.webp"/></a>
 
                 </td>
 

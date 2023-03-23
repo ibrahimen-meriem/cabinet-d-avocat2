@@ -23,7 +23,7 @@
                 <div class="input-group d-flex justify-content-end">
 
                     <div class="form-outline border-primary">
-                        <input class="form-control w-100" type="text" name="filtrerClient" id="filtrerClient" placeholder="filtrer.." />
+                        <input class="form-control w-100" type="text" name="searchClientVille" id="searchClientVille" placeholder="filtrer par ville.." />
                     </div>
                     <button type="button" class="btn"style="background: gold">
                         <img src="icon/107799.png" alt="search" style="width: 20px">
@@ -57,6 +57,8 @@
                 <th scope="col">Nom</th>
                 <th scope="col">Prenom</th>
                 <th scope="col">ACTIVE</th>
+                <th scope="col">ville</th>
+
                 <th scope="col"> actions</th>
             </tr>
             </thead>
@@ -69,6 +71,9 @@
                         <td>{{$info->nom}}</td>
                         <td>{{$info->prenom}}</td>
                         <td>@if($info->active==1) Active @else not active @endif</td>
+                        <td>{{$info->ville}}</td>
+
+
 
                         <td>
                             <a href="{{route('edit-clients', $info->id)}}" class="btn " style="background: gold">
@@ -101,6 +106,26 @@
                                 datatype: 'html',
                                 cache:false,
                                 data:{searchClient:searchClient,'_token':"{{csrf_token()}}"},
+                                success:function(data){
+                                    $("#ajax_search_result").html(data);
+                                },
+                                error:function(){
+
+                                }
+
+
+
+                            })
+                        })
+                        $(document).on('input',"#searchClientVille",function(){
+
+                            var searchClientVille=$(this).val();
+                            jQuery.ajax({
+                                url:"{{route('ajax_search_ville')}}",
+                                type:'post',
+                                datatype: 'html',
+                                cache:false,
+                                data:{searchClientVille:searchClientVille,'_token':"{{csrf_token()}}"},
                                 success:function(data){
                                     $("#ajax_search_result").html(data);
                                 },
