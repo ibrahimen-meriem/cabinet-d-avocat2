@@ -22,7 +22,7 @@ class ClientsController extends Controller
 
     }
     function store(CreatClientsRequest $request){
-        $dataupdate['name']=$request->input('name');
+        $data['name']=$request->input('name');
         $data['adresse'] = $request->input('Adress');
         $data['ville'] = $request->input('Ville');
         $data['tel'] = $request->input('tel');
