@@ -27,7 +27,7 @@ class ClientsController extends Controller
         $data['ville'] = $request->input('Ville');
         $data['tel'] = $request->input('tel');
         $data['cin'] = $request->input('CIN');
-        $data['active']= $request->input('activiter');
+        $data['active']= 0;
         $data['datenaissance'] = $request->input('dat_naiss');
         $data['create_at']= date("Y-m-d H:i:s");
         $data['update_at']= date("Y-m-d H:i:s");

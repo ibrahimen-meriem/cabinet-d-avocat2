@@ -19,19 +19,6 @@
                     @enderror
 
                 </div>
-                <div class="form-group row" style="margin-top: 30px">
-
-                    <label for="activiter" class="form-label col">Activite:</label>
-                    <select name="activiter" class="form-control col">
-                        <option value="" > les activiteé</option>
-                        <option @if(old('activiter')==1) selected @endif value="1">yes</option>
-                        <option @if(old('activiter')==0 and old('activiter')!='' ) selected @endif value="0">no</option>
-                    </select>
-                    @error('activiter')
-                    <span class="text-danger">{{$message}}</span>
-                    @enderror
-
-                </div>
             </div>
             <div class="col-6">
                 <div class="form-group row"> <label for="adress" class="col">Adress:</label>
